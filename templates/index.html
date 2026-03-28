@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentiLens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero-section">
+            <div class="hero-badge">AI Minor Project</div>
+            <h1 class="brand-title">SentiLens</h1>
+            <p class="hero-subtitle">
+                Sentiment Analysis of Text Data with confidence score and interpretable keyword insights
+            </p>
+        </header>
+
+        <main class="main-layout">
+            <section class="analyzer-panel">
+                <div class="panel-header">
+                    <h2>Text Analyzer</h2>
+                    <p>Enter a sentence, review, or comment to analyze sentiment.</p>
+                </div>
+
+                <div class="input-area">
+                    <label for="textInput" class="input-label">Input Text</label>
+                    <textarea id="textInput" placeholder="Example: This movie was surprisingly good and the acting was excellent."></textarea>
+                </div>
+
+                <div class="action-row">
+                    <button onclick="analyzeText()">Analyze</button>
+                </div>
+
+                <div id="result" class="result-container"></div>
+            </section>
+
+            <section class="side-panel">
+                <div class="info-card history-card">
+                    <div class="card-title-row">
+                        <h2>Recent Analysis</h2>
+                        <span class="mini-tag">Last 5</span>
+                    </div>
+                    <div id="history" class="card-body empty-state">
+                        No analysis yet.
+                    </div>
+                </div>
+
+                <div class="info-card alerts-card">
+                    <div class="card-title-row">
+                        <h2>Live Alerts</h2>
+                        <span class="mini-tag">Demo Feed</span>
+                    </div>
+                    <div id="liveAlerts" class="card-body">
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

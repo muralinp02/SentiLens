@@ -1,0 +1,349 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #edf2f7;
+    --card: #ffffff;
+    --card-soft: #f8fbff;
+    --border: #d9e2ec;
+    --text: #142033;
+    --muted: #5f6f82;
+    --primary: #315efb;
+    --primary-dark: #2448c9;
+    --shadow: 0 10px 30px rgba(31, 41, 55, 0.08);
+
+    --positive: #1f9d55;
+    --negative: #d64545;
+    --neutral: #d28b10;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(49, 94, 251, 0.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.06), transparent 22%),
+        var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.page-shell {
+    width: min(1400px, 96%);
+    margin: 0 auto;
+    padding: 24px 0 28px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 10px 20px 26px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(49, 94, 251, 0.10);
+    color: var(--primary-dark);
+    border: 1px solid rgba(49, 94, 251, 0.18);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+}
+
+.brand-title {
+    margin: 0;
+    font-size: 54px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #0f172a;
+}
+
+.hero-subtitle {
+    margin: 14px auto 0;
+    max-width: 760px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 1.45fr 0.85fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.analyzer-panel,
+.info-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.analyzer-panel {
+    padding: 26px;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header h2 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.panel-header p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.input-area {
+    margin-top: 22px;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+textarea {
+    width: 100%;
+    min-height: 230px;
+    resize: none;
+    border: 1px solid #cfd8e3;
+    border-radius: 18px;
+    padding: 18px 18px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #111827;
+    background: linear-gradient(180deg, #fbfdff 0%, #f5f8fc 100%);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea:focus {
+    border-color: #7aa2ff;
+    box-shadow: 0 0 0 4px rgba(49, 94, 251, 0.10);
+}
+
+.action-row {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    min-width: 170px;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--primary), #4f78ff);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    box-shadow: 0 10px 18px rgba(49, 94, 251, 0.20);
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 24px rgba(49, 94, 251, 0.25);
+    background: linear-gradient(135deg, #2954ef, #466ff8);
+}
+
+button:active {
+    transform: scale(0.985);
+}
+
+.result-container {
+    margin-top: 22px;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+}
+
+.result-card {
+    width: 100%;
+    padding: 22px;
+    border-radius: 18px;
+    background: var(--card-soft);
+    border: 1px solid #e2e8f0;
+    border-left: 8px solid #94a3b8;
+}
+
+.result-card.positive {
+    border-left-color: var(--positive);
+}
+
+.result-card.negative {
+    border-left-color: var(--negative);
+}
+
+.result-card.neutral {
+    border-left-color: var(--neutral);
+}
+
+.result-card h3 {
+    margin: 0 0 14px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.result-card p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #334155;
+}
+
+.result-highlight {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    background: #e8eefc;
+    color: #2948a4;
+}
+
+.bar-bg {
+    width: 100%;
+    height: 12px;
+    background: #dbe5ef;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 12px 0 16px;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.side-panel {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 22px;
+}
+
+.info-card {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.card-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.card-title-row h2 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.mini-tag {
+    background: #eef4ff;
+    color: #3355c5;
+    border: 1px solid #dbe7ff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 999px;
+}
+
+.card-body {
+    flex: 1;
+}
+
+.empty-state {
+    color: var(--muted);
+    font-size: 15px;
+    padding-top: 6px;
+}
+
+.history-item,
+.alert-item {
+    background: #f8fbff;
+    border: 1px solid #e3ebf5;
+    border-radius: 16px;
+    padding: 14px 15px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #324154;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
+}
+
+.history-item strong,
+.alert-item strong {
+    color: #0f172a;
+}
+
+.alert-item {
+    border-left: 5px solid var(--primary);
+    background: linear-gradient(180deg, #fbfdff 0%, #f3f8ff 100%);
+}
+
+@media (max-width: 1100px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .side-panel {
+        grid-template-rows: auto auto;
+    }
+
+    .analyzer-panel {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-shell {
+        width: 94%;
+        padding-top: 16px;
+    }
+
+    .brand-title {
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .analyzer-panel,
+    .info-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    textarea {
+        min-height: 180px;
+    }
+
+    .card-title-row h2 {
+        font-size: 20px;
+    }
+}
