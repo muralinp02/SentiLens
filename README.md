@@ -55,29 +55,6 @@ Unlike basic sentiment classifiers that only return a label, SentiLens enhances 
 
 ---
 
-## 📂 Project Structure
-SentiLens/
-│
-├── app.py
-├── train_model.py
-├── requirements.txt
-│
-├── model/
-│ ├── sentiment_model.pkl
-│ └── tfidf_vectorizer.pkl
-│
-├── static/
-│ ├── style.css
-│ └── script.js
-│
-├── templates/
-│ └── index.html
-│
-└── utils/
-└── preprocess.py
-
-
----
 
 ## ⚙️ Setup Instructions
 
